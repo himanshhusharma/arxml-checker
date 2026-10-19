@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "arxml-checker"
+version = "1.0.0"
+description = "Checks AUTOSAR ARXML files for port, interface and data-type mismatches before integration"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["lxml>=4.9"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+arxml-check = "arxml_checker.cli:main"
+
+[tool.setuptools]
+packages = ["arxml_checker"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
